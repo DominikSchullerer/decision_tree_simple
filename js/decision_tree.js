@@ -284,9 +284,9 @@ function getNodeHTML(node) {
     entropy.textContent = 'Entropie: ' + String(Math.round(node.entropy*100)/100)
 
     /* Fill content with its entries */
-    content.appendChild(previousDecision)
+    // content.appendChild(previousDecision)
     content.appendChild(attribute)
-    content.appendChild(sampleQuantity)
+    // content.appendChild(sampleQuantity)
 
     /*
     content.appendChild(entropy)
@@ -338,11 +338,14 @@ function getLeafHTML(leaf) {
     sampleQuantity.textContent = 'Anzahl der Trainingsdaten: ' + String(leaf.sampleQuantity)
     let entropy = document.createElement('p')
     entropy.textContent = 'Entropie: ' + String(Math.round(leaf.entropy*100)/100)
+    let text = document.createElement('p')
+    text.textContent = "Entscheidung getroffen."
 
     /* Fill content with its entries */
-    content.appendChild(previousDecision)
-    content.appendChild(decision)
-    content.appendChild(sampleQuantity)
+    // content.appendChild(previousDecision)
+    // content.appendChild(decision)
+    // content.appendChild(sampleQuantity)
+    content.appendChild(text)
 
     /*
     content.appendChild(entropy)
