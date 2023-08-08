@@ -343,9 +343,9 @@ function getLeafHTML(leaf) {
 
     /* Fill content with its entries */
     // content.appendChild(previousDecision)
-    // content.appendChild(decision)
+    content.appendChild(decision)
     // content.appendChild(sampleQuantity)
-    content.appendChild(text)
+    // content.appendChild(text)
 
     /*
     content.appendChild(entropy)
