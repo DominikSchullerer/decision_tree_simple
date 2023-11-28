@@ -208,6 +208,9 @@ function decisionTree(samples, attributes, previousDecision = '') {
             }
         });
         valueKeys.sort()
+        if (valueKeys.includes('0')) {
+            valueKeys.reverse()
+        }
 
         /* Create a dictionary using valueKeys and an array of samples classified by the respective key */
         valueKeys.forEach(key => {
@@ -227,7 +230,8 @@ function decisionTree(samples, attributes, previousDecision = '') {
         nextAttributes.splice(bestAttributeIndex, 1)
 
         /* Recursive call of decision tree for each value in valueKeys */
-        for (const value in valueDistribution) {
+        for (var i = 0; i < valueKeys.length; i++) {
+            value = valueKeys[i]
             let currentDecision = attribute + ": " + value
             children.push(decisionTree(valueDistribution[value], nextAttributes, currentDecision))
         }
